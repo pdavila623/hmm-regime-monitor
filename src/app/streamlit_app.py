@@ -1,9 +1,4 @@
-import os, sys
 
-# Streamlit Cloud fix: add repo root to Python path so "import src" works
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-if REPO_ROOT not in sys.path:
-    sys.path.insert(0, REPO_ROOT)
 """
 Market Regime Monitor — Streamlit Dashboard
 ============================================
@@ -13,6 +8,15 @@ Run:
     streamlit run src/app/streamlit_app.py
 """
 from __future__ import annotations
+import os, sys
+
+# Streamlit Cloud fix: add repo root to Python path so "import src" works
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
+import streamlit as st
+...
 
 import time
 from datetime import datetime, timedelta
