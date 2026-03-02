@@ -1,3 +1,9 @@
+import os, sys
+
+# Streamlit Cloud fix: add repo root to Python path so "import src" works
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
 """
 Market Regime Monitor — Streamlit Dashboard
 ============================================
